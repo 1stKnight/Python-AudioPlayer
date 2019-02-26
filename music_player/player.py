@@ -129,10 +129,8 @@ class MediaPanel(wx.Panel):
                           "ERROR",
                           wx.ICON_ERROR | wx.OK)
         else:
-            self.mediaPlayer.SetInitialSize()
-            self.GetSizer().Layout()
-            self.playbackSlider.SetRange(0, self.mediaPlayer.Length())
             self.playPauseBtn.Enable(True)
+            
     
     #----------------------------------------------------------------------
     def onBrowse(self, event):
@@ -167,10 +165,14 @@ class MediaPanel(wx.Panel):
             print(currentPlaying)
             self.loadMusic(musicList[currentPlaying])
             musicList[currentPlaying]
+            self.playPauseBtn.SetToggle(False)
+
         else:
             print(currentPlaying)
             self.loadMusic(musicList[currentPlaying])
             musicList[currentPlaying]
+            self.playPauseBtn.SetToggle(False)
+
     
     #----------------------------------------------------------------------
     def onPause(self):
@@ -210,10 +212,14 @@ class MediaPanel(wx.Panel):
             print(currentPlaying)
             self.loadMusic(musicList[currentPlaying])
             musicList[currentPlaying]
+            self.playPauseBtn.SetToggle(False)
+
         else:
             print(currentPlaying)
             self.loadMusic(musicList[currentPlaying])
-            musicList[currentPlaying]
+            self.playPauseBtn.SetToggle(False)
+
+
     #----------------------------------------------------------------------
     def onSeek(self, event):
         """
