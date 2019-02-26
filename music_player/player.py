@@ -217,6 +217,7 @@ class MediaPanel(wx.Panel):
         else:
             print(currentPlaying)
             self.loadMusic(musicList[currentPlaying])
+            musicList[currentPlaying]
             self.playPauseBtn.SetToggle(False)
 
 
